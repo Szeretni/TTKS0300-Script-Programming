@@ -44,8 +44,6 @@ def symbols(string):
             if (dict[key] != plus and dict[key] != equal):              
                 print "False, '" + dict[key] + "' is not surrounded by + symbols at all"
                 true = False
-            else:
-                print true
         #2 symbols
         elif (ind == 2):
             #if letter
