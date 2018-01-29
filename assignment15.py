@@ -10,7 +10,13 @@ countriesDict =  {
   codeMapDict[countryCodesList[2]]:{"head honcho":("Erna Solberg",54),"population":5.084}
 }
 for key, value in countriesDict.iteritems():
-    print key + ":\n\t" + str(value.iteritems())
+    print key + ":"
+    for key1, value1 in value.iteritems():
+        print "\t" + str(key1)+ str(value1)
+'''
+for key, value in countriesDict.iteritems():
+    print key + ":\n\t" + str(value["head honcho"])+ str(value["population"])
+    '''
 '''
 for key, value in countriesDict.iteritems():
     print key + ":"
