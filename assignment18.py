@@ -1,14 +1,17 @@
+#Version 2018-02-12
 def division(num1,num2):
     try:
         var = num1/num2
         print var
     except ZeroDivisionError:
-        print "Divided by zero!"
+        print "Tried to divide by zero!"
+        
+#call
+division(4,0)
+division(4,2)
 
+#prints
 '''
->>> division(4,0)
-Divided by zero!
->>> division(4,2)
+Tried to divide by zero!
 2
->>> 
 '''

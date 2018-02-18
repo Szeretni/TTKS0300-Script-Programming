@@ -1,3 +1,4 @@
+#Version 2018-02-12
 def division(num1,num2):
     try:
         var = num1/num2
@@ -7,8 +8,11 @@ def division(num1,num2):
     except TypeError:
         print "One or both of your parameters are wrong type!"
 
+#call
+division(4,"a")
+
+#prints
 '''
->>> division(4,"a")
 One or both of your parameters are wrong type!
 >>> 
 '''

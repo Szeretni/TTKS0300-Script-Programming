@@ -1,3 +1,4 @@
+#Version 2018-02-12
 #source for exception descriptions
 #https://docs.python.org/2/library/exceptions.html
 
@@ -54,7 +55,9 @@ def errors():
 
 #call
 errors()
-'''prints
+
+#prints
+'''
 NameError
 IndexError
 KeyError

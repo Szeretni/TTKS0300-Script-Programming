@@ -1,3 +1,4 @@
+#Version 2018-02-12
 def division(num1,num2):
     try:
         var = num1/num2
@@ -13,8 +14,10 @@ def call():
     except:
         print "Wrong amount of parameters"
 
+#call
 call()
+
+#prints
 '''
->>> call()
 Wrong amount of parameters
 '''
