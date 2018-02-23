@@ -29,7 +29,7 @@ import sys
 
 f = open(sys.argv[1],"r") #argument index 1 is the file ie. python assignment29.py players.txt
 for line in f:
-     line
+     sys.stdout.write(line)
 f.close()
 
 #cmd prints
