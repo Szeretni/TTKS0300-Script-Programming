@@ -15,7 +15,8 @@ import random
 def guessingGame():
     print "++ Guessing Game ++\nGuess a number between 0 and 20"
 
-    correct = random.randint(0,20) #number to guess
+    #number to guess
+    correct = random.randint(0,20) 
 
     #loop
     total = 5 #max guesses
@@ -24,7 +25,7 @@ def guessingGame():
         try:
             guess = int(raw_input("Guess " + str(current) + "/" + str(total) + ": "))
         except ValueError:
-            print "not a number, try again"
+            print "Not a number, try again"
         else:
             if (guess == correct):
                 print "You guessed the number. Congratulations!"
@@ -32,10 +33,10 @@ def guessingGame():
             elif (guess < 0 or guess > 20):
                 print "The guess should be between 0 and 20, try again"
             else:
-                print "sorry, try again!"
+                print "Sorry, try again!"
                 current += 1
-                if (current == 6):
-                    print "game over, you lost! the correct number was " + str(correct)
+                if (current == 6): #game over
+                    print "Game over, you lost! the correct number was " + str(correct)
     
 #calls
 guessingGame()
@@ -45,18 +46,18 @@ guessingGame()
 ++ Guessing Game ++
 Guess a number between 0 and 20
 Guess 1/5: a
-not a number, try again
+Not a number, try again
 Guess 1/5: 999
 The guess should be between 0 and 20, try again
 Guess 1/5: -1000
 The guess should be between 0 and 20, try again
 Guess 1/5: 5
-sorry, try again!
+Sorry, try again!
 Guess 2/5: 6
-sorry, try again!
+Sorry, try again!
 Guess 3/5: 7
-sorry, try again!
+Sorry, try again!
 Guess 4/5: 8
 You guessed the number. Congratulations!
 '''
-#game over, you lost! the correct number was 20
+#Game over, you lost! the correct number was 20

@@ -1,5 +1,6 @@
-﻿#Version 2018-02-19
+﻿#Version 2018-02-26
 '''
+set PATH=%PATH%;C:\Python27
 Write a Python script that mimics the cat UNIX tool. cat reads a given file and prints it’s content
 to stdout. In other words, you have to write an application that reads a filename from the command
 line arguments (sys.argv list). So if you execute the application from the command line (cmd on
@@ -26,38 +27,47 @@ If the file is not found or it cannot be read the exception should be handled an
 should be printed (the relevant exception is IOError)
 '''
 import sys
-
-f = open(sys.argv[1],"r") #argument index 1 is the file ie. python assignment29.py players.txt
-for line in f:
-     sys.stdout.write(line)
-f.close()
+try:
+     if (len(sys.argv) <2):
+          print "Not enough arguments."
+     else:
+          f = open(sys.argv[1],"r") #argument index 1 is the file ie. python assignment29.py players.txt
+          for line in f:
+               sys.stdout.write(line) #to prevent double new line
+          print #new line after the print
+          f.close()
+except IOError:
+     print "The file is not found or it cannot be read"
 
 #cmd prints
 '''
 C:\Users\l2912\Source\Repos\TTKS0300-Script-Programming>python assignment29.py players.txt
 Lee Sedol
-
 Park Junghwan
-
 Xie He
-
 Chen Yaoye
-
 Tan Xiao
-
 Iyama Yuta
-
 Piao Wenyao
-
 Gu Li
-
 Kong Jie
-
 Jian Weijie
-
 Zhou Ruiyan
-
 Ida Atsushi
+
+C:\Users\l2912\Source\Repos\TTKS0300-Script-Programming>
+'''
+#file name not given
+'''
+C:\Users\l2912\Source\Repos\TTKS0300-Script-Programming>python assignment29.py
+Not enough arguments.
+
+C:\Users\l2912\Source\Repos\TTKS0300-Script-Programming>
+'''
+#file isn't available
+'''
+C:\Users\l2912\Source\Repos\TTKS0300-Script-Programming>python assignment29.py players.txt
+The file is not found or it cannot be read
 
 C:\Users\l2912\Source\Repos\TTKS0300-Script-Programming>
 '''

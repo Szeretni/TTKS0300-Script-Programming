@@ -1,31 +1,22 @@
-﻿#Version 2018-02-19
+﻿#Version 2018-02-19 (2016-02-26 minor improvements)
 '''
 Extend the function in the previous assignment to handle TypeError which is caused when you try to
 divide a number with a non-number (e.g. character).
 '''
 def calculator(oper,num1,num2):
-    if (oper == "add"):
-        try:
+    try:
+        if (oper == "add"):
             result = num1 + num2
-        except TypeError:
-            result = "TypeError occurred."
-    if (oper == "sub"):
-        try:
+        elif (oper == "sub"):
             result = num1 - num2
-        except TypeError:
-            result = "TypeError occurred."
-    if (oper == "multiply"):
-        try:
+        elif (oper == "multiply"):
             result = num1 * num2
-        except TypeError:
-            result = "TypeError occurred."
-    if (oper == "divide"):
-        try:
+        elif (oper == "divide"):
             result = num1 / num2
-        except ZeroDivisionError:
-            result =  None
-        except TypeError:
+    except TypeError:
             result = "TypeError occurred."
+    except ZeroDivisionError:
+            result =  None
     print result
 
 #calls
