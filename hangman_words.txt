@@ -1,0 +1,10 @@
+hangman
+python
+optional
+convert
+contain
+message
+unguessed
+replaced
+underscore
+condition
