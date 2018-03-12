@@ -51,26 +51,65 @@ correct!
 summer
 '''
 import random
+import sys
 
-#reading and selecting a word from a file
-f = open("hangman_words.txt","r")
+def hangman():
+    #words from the file and number of words in the file
+    wordList = []
+    words = -1
+    f = open("hangman_words.txt","r")
+    for line in f:
+        wordList.append(line)
+    words += 1
+    f.close()
 
-#number of words in the file
-lineCount = 0
-for line in f:
-    lineCount += 1
-print lineCount
-f.close()
+    #random word from the file
+    rand = random.randint(0,words)
+    theWord = wordList[rand]
 
-#random word from the file
-f = open("hangman_words.txt","r")
-rand = random.randint(0,lineCount)
-print rand
-theWord = ""
-for line in f:
-    if lineCount is rand:
-        theWord = line
-    lineCount -= 1
-    print lineCount
-print theWord
-f.close()
+    #the game
+    #topic
+    print "Hangman game!\nThe word has " + str(len(theWord)) + " letters"
+
+    #number of guesses
+    maxGuesses = 7
+
+    #visible word
+    visibleWord = ""
+    for x in range(0,len(theWord)):
+        visibleWord += "_"
+
+    #validation
+    #valid chars
+    validChars = []
+    numOfLetters = ord('z')-ord('a') #ascii arithmetics, syntax from https://stackoverflow.com/questions/2156892/python-how-can-i-increment-a-char
+    for x in range(0,numOfLetters+1):
+        validChars.append(chr(ord('a')+x))
+
+    #lenght, valid char
+    while (maxGuesses > 0):
+        guess = raw_input("Guess: ")
+        if len(guess) > 1:
+            print "Too long guess, try again."
+        elif not validGuess(guess,validChars):
+            print "Not a valid character, try again."
+        else:
+            #valid guess, checks if guess char is in the word
+            counter = 1
+            for c in theWord:
+                if guess is c:
+                    visibleWord[counter]=c
+            print visibleWord
+            maxGuesses -= 1
+
+#functions    
+#valid guess
+def validGuess(guess,validChars):
+    valid = False
+    for c in validChars:
+        if guess is c:
+            valid = True
+    return valid
+
+#init
+hangman()
