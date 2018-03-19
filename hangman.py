@@ -62,11 +62,10 @@ def hangman():
     #random word from the file
     theWord = RandomWord(wordList,wordsInList)
 
-    #the game
-    #topic
+    #print topic
     print "Hangman game!\nThe word has " + str(len(theWord)) + " letters"
 
-    #number of guesses
+    #determine the number of guesses
     maxGuesses = 10 #increased to 10 from specs 7 because of words like "underscore"
 
     #valid chars
